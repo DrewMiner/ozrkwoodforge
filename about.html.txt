@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - OZRK WoodForge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>About OZRK WoodForge</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>Who We Are</h2>
+        <p>At OZRK WoodForge, we believe that furniture should be more than just functional—it should be a reflection of your personal style, a piece of art, and something built to last for generations.</p>
+        <p>Based in the Ozarks, our work is inspired by the region’s rugged beauty, rich history, and timeless craftsmanship. We incorporate locally sourced, sustainably harvested, and reclaimed woods into our designs, ensuring that each piece has a story and a soul.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
+    </footer>
+</body>
+</html>

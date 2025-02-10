@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - OZRK WoodForge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Our Work</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>A Glimpse into Our Creations</h2>
+        <ul>
+            <li><strong>Handmade Charcuterie Boards</strong> – Crafted from premium hardwoods.</li>
+            <li><strong>Wall-Mounted Serving Board Set</strong> – Reclaimed barnwood with serving boards.</li>
+            <li><strong>Wooden Headphone Stand</strong> – Custom-crafted for home offices.</li>
+            <li><strong>Artisan Home Decor</strong> – Votive holders, candle displays, and more.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
+    </footer>
+</body>
+</html>
