@@ -84,6 +84,13 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
+.blog {
+    background: transparent;  /* Allows the woodgrain texture to show */
+    color: #5E5C5C;  /* Change this to the color you like */
+    padding: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);  /* Optional: Adds slight contrast */
+}
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
