@@ -48,35 +48,37 @@
 	fetch('/info.txt')
   	  .then(response => response.text())
   	  .then(text => {
-  	      document.getElementById('static-text').innerText = text;
-  	  })
- 	   .catch(error => console.log('Error loading text file:', error));
-
+ 	       let staticTextContainer = document.getElementById('static-text'); // Ensure you have this ID in your HTML
+	        staticTextContainer.innerHTML = text
+            	.split("\n").map(para => `<p>${para.trim()}</p>`).join("");
+    	})
+    	.catch(error => console.log('Error loading text file:', error));
+	
 	// Load blog posts from blog.json
 	fetch('/blog.json')
-  	  .then(response => response.json())
-  	  .then(posts => {
-  	      let blogContainer = document.getElementById('blog-section');
-  	      blogContainer.innerHTML = ""; // Clear default text
+    	.then(response => response.json())
+    	.then(posts => {
+	        let blogContainer = document.getElementById('blog-section'); // Ensure this ID exists in your HTML
+	        blogContainer.innerHTML = ""; // Clear default text
+	
+	        posts.forEach(post => {
+            	let blogPost = document.createElement('div');
+            	blogPost.classList.add('blog-post');
+	
+            	let imageHTML = post.image ? `<img src="${post.image}" alt="Blog Image" style="width:100%; max-width:500px;">` : "";
 
-  	      posts.forEach(post => {
-   	         let blogPost = document.createElement('div');
-  	          blogPost.classList.add('blog-post');
-
-   	         let imageHTML = post.image ? `<img src="${post.image}" alt="Blog Image" style="width:100%; max-width:500px;">` : "";
-
-         	   blogPost.innerHTML = `
-          	      <h3>${post.title}</h3>
-           	     <p><small>${post.date}</small></p>
-           	     ${imageHTML}
-           	     <p>${post.content}</p>
-         	       <hr>
-         	   `;
-
-         	   blogContainer.appendChild(blogPost);
-    	    });
-  	  })
-   	 .catch(error => console.log('Error loading blog posts:', error));
+            	blogPost.innerHTML = `
+	                <h3>${post.title}</h3>
+                	<p><small>${post.date}</small></p>
+                	${imageHTML}
+                	${post.content.split("\n").map(para => `<p>${para.trim()}</p>`).join("")}
+                	<hr>
+            	`;
+	
+            	blogContainer.appendChild(blogPost);
+        	});
+    	})
+    	.catch(error => console.log('Error loading blog posts:', error));	
     </script>
 </body>
 </html>
