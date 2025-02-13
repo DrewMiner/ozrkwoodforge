@@ -86,7 +86,7 @@ nav ul li a:hover {
 
 .blog {
     background: rgba(255, 255, 255, 0.5);  /* 50% white transparency */
-    color: #5E5C5C;  /* Change this to the color you like */
+    color: #3E3E3E;  /* Change this to the color you like */
     padding: 20px;
     border-radius: 8px;  /* Soft rounded edges */
     max-width: 90%;  /* Makes it responsive */
