@@ -34,6 +34,10 @@ header::before {
   
 header h1, header p {
     position: relative;
+    }
+
+nav {
+    position: relative;
     z-index: 2;
 }
 
@@ -49,7 +53,16 @@ nav ul li {
 
 nav ul li a {
     color: white;
+    font-weight: bold;
+    padding: 10px 15px;
     text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);  /* Add slight hover effect */
+    color: #f8d568;  /* Light yellow/gold for contrast */
+    border-radius: 5px;
 }
 
 .hero {
