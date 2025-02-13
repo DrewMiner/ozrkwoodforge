@@ -90,7 +90,7 @@ p {
     text-align: center;
     padding: 20px;
     background:  rgba(139, 90, 43, 0.8); /* Brown 80% transparent */
-    color: #4A3D36;  /* Change this to the color you like */
+    color: #2F2520;  /* Change this to the color you like */
     padding: 20px;
     border-radius: 8px;  /* Soft rounded edges */
     max-width: 90%;  /* Makes it responsive */
@@ -100,7 +100,7 @@ p {
 
 .blog {
     background: rgba(255, 255, 255, 0.5);  /* 50% white transparency */
-    color: #4A3D36;  /* Change this to the color you like */
+    color: #2F2520; /* Change this to the color you like */
     padding: 20px;
     border-radius: 8px;  /* Soft rounded edges */
     max-width: 90%;  /* Makes it responsive */
