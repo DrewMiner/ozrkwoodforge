@@ -80,8 +80,12 @@ nav ul li a:hover {
     text-align: center;
     padding: 20px;
     background: linear-gradient(to bottom, rgba(139, 90, 43, 0.8), rgba(210, 180, 140, 0.0)); /* Brown fading to fully transparent */
-    padding: 40px;
-    border-radius: 10px;
+    color: #4A3D36;  /* Change this to the color you like */
+    padding: 20px;
+    border-radius: 8px;  /* Soft rounded edges */
+    max-width: 90%;  /* Makes it responsive */
+    width: 800px;  /* Ideal width for desktops */
+    margin: 40px auto;  /* Centers the section */
 }
 
 .blog {
