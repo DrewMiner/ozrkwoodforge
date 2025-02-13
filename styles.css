@@ -1,9 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #D7BFA8;
-    color: #333;
+   background-image: url('images/banner.jpg');  /* Use your image */
+    background-size: cover;  /* Make sure it covers the whole header */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat;  /* Don't repeat the image */
+    height: 250px;  /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;  /* Ensure text is readable */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 header {
