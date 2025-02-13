@@ -53,7 +53,7 @@
  	   .catch(error => console.log('Error loading text file:', error));
 
 	// Load blog posts from blog.json
-	fetch(''http://localhost:8080/blog.json')  // Remove absolute paths!
+	fetch('http://localhost:8080/blog.json')  // Remove absolute paths!
   	  .then(response => response.json())
   	  .then(posts => {
   	      let blogContainer = document.getElementById('blog-section');
