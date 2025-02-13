@@ -45,7 +45,7 @@
     <!-- JavaScript for loading text & blog posts -->
     <script>
        // Load static text from info.txt
-	fetch('http://localhost:8080/info.txt')
+	fetch('/info.txt')
   	  .then(response => response.text())
   	  .then(text => {
   	      document.getElementById('static-text').innerText = text;
@@ -53,7 +53,7 @@
  	   .catch(error => console.log('Error loading text file:', error));
 
 	// Load blog posts from blog.json
-	fetch('http://localhost:8080/blog.json')
+	fetch('/blog.json')
   	  .then(response => response.json())
   	  .then(posts => {
   	      let blogContainer = document.getElementById('blog-section');
