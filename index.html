@@ -28,8 +28,14 @@
 
     <section class="content">
         <h3>Welcome to OZRK WoodForge</h3>
+        <div id="static-text">Loading content...</div> <!-- Added for info.txt -->
         <p>We specialize in handcrafted furniture, custom wood decor, and sustainable designs. Every piece tells a story.</p>
         <a href="portfolio.html" class="btn">View Our Work</a>
+    </section>
+
+    <section class="blog">
+        <h3>Latest Blog Posts</h3>
+        <div id="blog-section">Loading blog posts...</div> <!-- Added for blog.json -->
     </section>
 
     <footer>
@@ -47,30 +53,4 @@
             .catch(error => console.log('Error loading text file:', error));
 
         // Load blog posts from blog.json
-        fetch('blog.json')
-            .then(response => response.json())
-            .then(posts => {
-                let blogContainer = document.getElementById('blog-section');
-                blogContainer.innerHTML = ""; // Clear default text
-
-                posts.forEach(post => {
-                    let blogPost = document.createElement('div');
-                    blogPost.classList.add('blog-post');
-
-                    let imageHTML = post.image ? `<img src="${post.image}" alt="Blog Image" style="width:100%; max-width:500px;">` : "";
-
-                    blogPost.innerHTML = `
-                        <h3>${post.title}</h3>
-                        <p><small>${post.date}</small></p>
-                        ${imageHTML}
-                        <p>${post.content}</p>
-                        <hr>
-                    `;
-
-                    blogContainer.appendChild(blogPost);
-                });
-            })
-            .catch(error => console.log('Error loading blog posts:', error));
-    </script>
-</body>
-</html>
+        fetch('blo
