@@ -45,7 +45,7 @@
     <!-- JavaScript for loading text & blog posts -->
     <script>
        // Load static text from info.txt
-	fetch(''http://localhost:8080/info.txt')  // Remove absolute paths!
+	fetch('http://localhost:8080/info.txt')  // Remove absolute paths!
   	  .then(response => response.text())
   	  .then(text => {
   	      document.getElementById('static-text').innerText = text;
