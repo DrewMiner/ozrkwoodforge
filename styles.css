@@ -4,6 +4,10 @@ body {
     padding: 0;
     background-color: #D7BFA8;
     color: #333;
+    background-image: url('images/background.jpg');  /* Change to your image */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 header {
@@ -75,6 +79,9 @@ nav ul li a:hover {
 .content {
     text-align: center;
     padding: 20px;
+    background: linear-gradient(to bottom, #8B5A2B, #D2B48C);  /* Brown to Tan */
+    padding: 40px;
+    border-radius: 10px;
 }
 
 .btn {
