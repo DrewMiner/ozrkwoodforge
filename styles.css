@@ -79,13 +79,13 @@ nav ul li a:hover {
 .content {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(to bottom, #8B5A2B, #B74E16);  /* Brown to Tan */
+    background: linear-gradient(to bottom, #8B5A2B, #D2B48C);  /* Brown to Tan */
     padding: 40px;
     border-radius: 10px;
 }
 
 .blog {
-    background: rgba(0, 0, 0, 0.3);  /* 30% black overlay */
+    background: rgba(255, 255, 255, 0.5);  /* 50% white transparency */
     color: #5E5C5C;  /* Change this to the color you like */
     padding: 20px;
     border-radius: 8px;  /* Soft rounded edges */
