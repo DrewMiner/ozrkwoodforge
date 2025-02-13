@@ -85,10 +85,13 @@ nav ul li a:hover {
 }
 
 .blog {
-    background: transparent;  /* Allows the woodgrain texture to show */
+    background: rgba(0, 0, 0, 0.3);  /* 30% black overlay */
     color: #5E5C5C;  /* Change this to the color you like */
     padding: 20px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);  /* Optional: Adds slight contrast */
+    border-radius: 8px;  /* Soft rounded edges */
+    max-width: 90%;  /* Makes it responsive */
+    width: 800px;  /* Ideal width for desktops */
+    margin: 40px auto;  /* Centers the section */
 }
 
 .btn {
