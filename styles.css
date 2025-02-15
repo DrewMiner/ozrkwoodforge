@@ -334,6 +334,41 @@ section {
     margin: 40px auto;  /* Centers the section */
     }
 
+    .cta-section {
+        text-align: center;
+        background: var(--warm-brown);
+        color: var(--soft-neutral);
+        padding: 40px 20px;
+        border-radius: 10px;
+        margin: 40px 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .cta-section p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .cta-section .btn {
+        background: var(--deep-green);
+        color: var(--soft-neutral);
+        padding: 12px 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+    
+    .cta-section .btn:hover {
+        background: var(--rustic-orange);
+    }
+    
+
 .gradient-section { /* a softer gradient for sections instead of solid color if needed */
     background: linear-gradient(to bottom, rgba(227, 213, 193, 1), rgba(227, 213, 193, 0.8));
     padding: 40px;
