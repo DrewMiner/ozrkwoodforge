@@ -340,33 +340,6 @@ section {
     border-radius: 10px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px 0;
-}
-
-.grid-item {
-    background: var(--soft-neutral);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.grid-item:hover {
-    transform: scale(1.05);
-}
-
-.grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-
 .hero {
     background: var(--warm-brown); /* Replace green with an earthy brown */
     color: var(--soft-neutral); /* Ensures text contrasts well */
@@ -408,7 +381,6 @@ section {
     opacity: 1; /* Show the first image by default */
 }
 
-
 .hero-content {
     position: relative;
     z-index: 2;
@@ -417,7 +389,6 @@ section {
 .hero h2, .hero p {
     color: var(--aged-bronze); /* Light beige for better readability */
 }
-
 
 .img-text-container {
     display: flex;
@@ -449,16 +420,44 @@ section {
     background: url('/assets/images/custom-furniture.jpg') no-repeat center center/cover;
 }
 
-.portfolio-cta {
+.portfolio-header {
     text-align: center;
-    margin-top: 40px;
+    padding: 40px;
 }
 
-.portfolio-cta p {
-    font-size: 18px;
-    margin-bottom: 10px;
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
 }
 
+.grid-item {
+    text-align: center;
+    background: var(--soft-neutral);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.grid-item p {
+    font-size: 16px;
+    color: var(--warm-brown);
+    margin-top: 10px;
+}
 
 .section-divider {
     height: 4px;
@@ -524,5 +523,13 @@ footer nav ul li a:hover {
     .contact-container {
         flex-direction: column;
         text-align: center;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Stacks images in one column */
+    }
+
+    .grid-item img {
+        max-width: 100%; /* Makes sure images fit smaller screens */
     }
 }
