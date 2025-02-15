@@ -1,9 +1,18 @@
+:root {
+    --warm-brown: #4A3D36;
+    --deep-green: #14401D;
+    --rustic-orange: #B55A30;
+    --soft-neutral: #E3D5C1;
+    --aged-bronze: #705A46;
+    --matte-black: #1C1C1C;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Slab', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #D7BFA8;
-    color: #333;
+    background-color: var(--soft-neutral);
+    color: var(--warm-brown);
     background-image: url('images/background-01.jpg');  /* Change to your image */
     background-size: cover;
     background-attachment: fixed;
@@ -40,9 +49,27 @@ header h1, header p {
     position: relative;
     }
 
-h1, h2, h3 {
-    font-family: Arial, sans-serif;  /* Keep existing heading font */
-    font-weight: bold;  /* Keep headings strong */
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+    color: var(--matte-black);
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background: var(--aged-bronze);
+    width: 80%;
+    margin: 20px auto;
+}
+
+a {
+    color: var(--deep-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--rustic-orange);
 }
 
 nav {
@@ -80,10 +107,11 @@ p {
 }
 
 .hero {
-    background-color: #2E4A3D;
+    background-color: rgba(14, 43, 18, 0.7);  /* Green with 70% opacity */;
     color: white;
     text-align: center;
     padding: 40px;
+    border-radius: 10px;
 }
 
 .content {
@@ -108,13 +136,21 @@ p {
     margin: 40px auto;  /* Centers the section */
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #B74E16;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+button, .btn {
+    background-color: var(--deep-green);
+    color: var(--soft-neutral);
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--rustic-orange);
+    transform: scale(1.05);
 }
 
 footer {
