@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - OZRK WoodForge</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,12 +20,39 @@
         </nav>
     </header>
 
-    <section class="content">
+    <section class="contact-header">
         <h2>Get in Touch</h2>
-        <p>Email: <a href="mailto:info@ozrkwoodforge.com">info@ozrkwoodforge.com</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/ozrkwoodforge/" target="_blank">facebook.com/ozrkwoodforge</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/ozrkwoodforge/" target="_blank">instagram.com/ozrkwoodforge</a></p>
+        <p>Have a project in mind? Contact us to discuss your custom order.</p>
     </section>
+    
+    <section class="contact-container">
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Follow us on social media for updates!</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/yourpage" target="_blank">Facebook</a> |
+                <a href="https://instagram.com/yourpage" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+    
 
     <footer>
         <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>

@@ -116,6 +116,81 @@ button:hover {
     transform: scale(1.05);
 }
 
+.contact-header {
+    text-align: center;
+    padding: 40px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    background: var(--soft-neutral);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--warm-brown);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background: var(--deep-green);
+    color: var(--soft-neutral);
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: var(--rustic-orange);
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p, .social-icons a {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    color: var(--deep-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--rustic-orange);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 
 nav {
     position: fixed;
@@ -159,7 +234,7 @@ nav ul li a:hover {
 }
 
 p {
-    font-family: "Roboto Slab", serif;
+    font-family: 'Roboto Slab', sans-serif;
     font-weight: 500;
     line-height: 1.7;
     margin-bottom: 15px;
@@ -197,7 +272,7 @@ section {
     max-width: 90%;  /* Makes it responsive */
     width: 800px;  /* Ideal width for desktops */
     margin: 40px auto;  /* Centers the section */
-}
+    }
 
 .gradient-section { /* a softer gradient for sections instead of solid color if needed */
     background: linear-gradient(to bottom, rgba(227, 213, 193, 1), rgba(227, 213, 193, 0.8));
