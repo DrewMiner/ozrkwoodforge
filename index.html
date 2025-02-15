@@ -36,10 +36,12 @@
         <a href="portfolio.html" class="btn">View Our Work</a>
     </section>
 
-    <section class="blog">
-        <h3>Latest Blog Posts</h3>
-        <div id="blog-section">Loading blog posts...</div> <!-- Added for blog.json -->
+    <section class="latest-blog">
+        <h2>Latest from the Blog</h2>
+        <div id="latest-blog-post">Loading latest post...</div>
+        <a href="blog.html" class="btn">Read More</a>
     </section>
+    
 
     <footer>
         <nav>
@@ -68,30 +70,25 @@
     	.catch(error => console.log('Error loading text file:', error));
 	
 	// Load blog posts from blog.json
-	fetch('/blog.json')
-    	.then(response => response.json())
-    	.then(posts => {
-	        let blogContainer = document.getElementById('blog-section'); // Ensure this ID exists in your HTML
-	        blogContainer.innerHTML = ""; // Clear default text
-	
-	        posts.forEach(post => {
-            	let blogPost = document.createElement('div');
-            	blogPost.classList.add('blog-post');
-	
-            	let imageHTML = post.image ? `<img src="${post.image}" alt="Blog Image" style="width:100%; max-width:500px;">` : "";
+    fetch('/blog.json')
+        .then(response => response.json())
+        .then(posts => {
+            if (posts.length > 0) {
+                let latestPost = posts[0]; // Get the most recent post (assuming the newest is first)
+                let blogContainer = document.getElementById('latest-blog-post');
 
-            	blogPost.innerHTML = `
-	                <h3>${post.title}</h3>
-                	<p><small>${post.date}</small></p>
-                	${imageHTML}
-                	${post.content.split("\n").map(para => `<p>${para.trim()}</p>`).join("")}
-                	<hr>
-            	`;
-	
-            	blogContainer.appendChild(blogPost);
-        	});
-    	})
-    	.catch(error => console.log('Error loading blog posts:', error));	
-    </script>
+                let imageHTML = latestPost.image ? `<img src="${latestPost.image}" alt="${latestPost.title}">` : "";
+
+                blogContainer.innerHTML = `
+                    ${imageHTML}
+                    <h3>${latestPost.title}</h3>
+                    <p><small>${latestPost.date}</small></p>
+                    <p>${latestPost.excerpt}</p>
+                `;
+            }
+        })
+        .catch(error => console.log('Error loading latest blog post:', error));
+</script>
+
 </body>
 </html>
