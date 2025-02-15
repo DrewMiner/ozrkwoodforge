@@ -632,11 +632,23 @@ footer nav ul li a:hover {
 
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        gap: 15px;
+        display: flex;
+        flex-wrap: nowrap; /* Prevents stacking */
+        justify-content: center; /* Centers items */
+        overflow-x: auto; /* Enables horizontal scrolling if needed */
+        white-space: nowrap; /* Prevents text from wrapping */
+        padding: 0;
     }
 
     nav ul li {
+        display: inline-block;
+        margin: 5px 8px; /* Adjusts spacing */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 12px;
+        font-size: 16px;
         text-align: center;
     }
 
