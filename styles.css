@@ -418,7 +418,41 @@ button[type="submit"]:hover {
 .cta-section .btn:hover {
     background: var(--rustic-orange);
 }
-    
+
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.faq-question {
+    width: 100%;
+    background: var(--midnight-blue);
+    color: var(--soft-neutral);
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--rustic-orange);
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background: var(--soft-neutral);
+    border-left: 4px solid var(--midnight-blue);
+}
 
 .gradient-section { /* a softer gradient for sections instead of solid color if needed */
     background: linear-gradient(to bottom, rgba(227, 213, 193, 1), rgba(227, 213, 193, 0.8));
