@@ -376,27 +376,54 @@ section {
 
 
 .hero {
-    background: url('/assets/images/wood-texture.jpg') no-repeat center center/cover;
-    padding: 60px 20px;
-    color: var(--soft-neutral);
-    position: relative;
+    background: var(--warm-brown); /* Replace green with an earthy brown */
+    color: var(--soft-neutral); /* Ensures text contrasts well */
+    padding: 40px 20px; /* Reduce padding to shrink the section */
+    text-align: center;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(20, 64, 29, 0.9), rgba(20, 64, 29, 0.6));
-    z-index: 1;
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: none; /* No solid background, let images shine */
 }
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.hero-slideshow {
+    flex: 1;
+    position: relative;
+    max-width: 500px;
+}
+
+.hero-slideshow img {
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slideshow img:first-child {
+    opacity: 1; /* Show the first image by default */
+}
+
 
 .hero-content {
     position: relative;
     z-index: 2;
 }
+
+.hero h2, .hero p {
+    color: var(--aged-bronze); /* Light beige for better readability */
+}
+
 
 .img-text-container {
     display: flex;
