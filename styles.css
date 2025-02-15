@@ -14,7 +14,7 @@ html {
 body {
     font-family: 'Roboto Slab', sans-serif;
     margin: 0;
-    padding: 0;
+    padding-top: 50px; /* Pushes content down below navbar */
     background-color: var(--soft-neutral);
     color: var(--warm-brown);
     background-image: url('images/background-01.jpg');  /* Change to your image */
@@ -22,6 +22,11 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
+
+body, main {
+    overflow: visible;
+}
+
 
 header {
     position: relative;
@@ -94,35 +99,38 @@ button:hover, .btn:hover {
 }
 
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: var(--matte-black);
-    padding: 15px 0;
+    padding: 10px 0; /* Reduce padding to shrink navbar height */
+    height: 30px; /* Set a fixed height */
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    list-style: none;
 }
 
 nav ul li a {
     color: var(--soft-neutral);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px; /* Reduce font size slightly if needed */
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 5px 10px;
 }
 
 nav ul li a:hover {
