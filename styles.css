@@ -195,14 +195,6 @@ button:hover {
     color: var(--rustic-orange);
 }
 
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-
 nav {
     position: fixed;
     top: 0;
@@ -393,17 +385,19 @@ section {
 .hero-text {
     flex: 1;
     text-align: left;
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 .hero-slideshow {
     flex: 1;
     position: relative;
     max-width: 500px;
+    height: 300px; /* Ensures slideshow height consistency */
 }
 
 .hero-slideshow img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     position: absolute;
     opacity: 0;
@@ -524,6 +518,11 @@ footer nav ul li a:hover {
     }
 
     nav ul li {
+        text-align: center;
+    }
+
+    .contact-container {
+        flex-direction: column;
         text-align: center;
     }
 }
