@@ -30,7 +30,7 @@ body, main {
 
 header {
     position: relative;
-    background-image: url('images/banner image.jpg');
+    background-image: url('assets/images/banner-image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -279,6 +279,10 @@ section {
     border-radius: 5px;
 }
 
+.portfolio {
+    background: url('/assets/images/custom-furniture.jpg') no-repeat center center/cover;
+}
+
 .portfolio-cta {
     text-align: center;
     margin-top: 40px;
@@ -303,6 +307,9 @@ footer {
     color: var(--soft-neutral);
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer nav ul {
