@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - OZRK WoodForge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>OZRK WoodForge Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="blog-header">
+        <h2>Latest Blog Posts</h2>
+        <p>Insights into woodworking, custom furniture, and design inspiration.</p>
+    </section>
+
+    <section class="blog-container" id="blog-section">
+        <!-- Blog posts will be dynamically loaded here via JavaScript -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        fetch('/blog.json')
+            .then(response => response.json())
+            .then(posts => {
+                let blogContainer = document.getElementById('blog-section');
+                blogContainer.innerHTML = "";
+
+                posts.forEach(post => {
+                    let blogPost = document.createElement('div');
+                    blogPost.classList.add('blog-post');
+
+                    let imageHTML = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
+
+                    blogPost.innerHTML = `
+                        ${imageHTML}
+                        <h3>${post.title}</h3>
+                        <p><small>${post.date}</small></p>
+                        <p>${post.excerpt}</p>
+                        <a href="#">Read More</a>
+                    `;
+
+                    blogContainer.appendChild(blogPost);
+                });
+            })
+            .catch(error => console.log('Error loading blog posts:', error));
+    </script>
+
+</body>
+</html>
