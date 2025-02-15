@@ -15,8 +15,8 @@ body {
     font-family: 'Roboto Slab', sans-serif;
     margin: 0;
     padding-top: 50px; /* Pushes content down below navbar */
-    background-color: var(--soft-neutral);
     color: var(--warm-brown);
+    background-color: var(--soft-neutral);
     background-image: url('images/background-01.jpg');  /* Change to your image */
     background-size: cover;
     background-attachment: fixed;
@@ -81,7 +81,25 @@ a:hover {
     color: var(--rustic-orange);
 }
 
-button, .btn {
+button {
+    background-color: var(--deep-green);
+    color: var(--soft-neutral);
+    border: 1px solid var(--aged-bronze);
+    padding: 12px 20px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--rustic-orange);
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
     background: url('/assets/images/metal-texture.jpg') no-repeat center center/cover;
     color: var(--soft-neutral);
     border: 1px solid var(--aged-bronze);
@@ -93,10 +111,11 @@ button, .btn {
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
-button:hover, .btn:hover {
+.btn:hover {
     background-color: var(--rustic-orange);
     transform: scale(1.05);
 }
+
 
 nav {
     position: fixed;
@@ -188,6 +207,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    padding: 20px 0;
 }
 
 .grid-item {
@@ -195,7 +215,20 @@ section {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 
 .hero {
     background: url('/assets/images/wood-texture.jpg') no-repeat center center/cover;
@@ -246,6 +279,17 @@ section {
     border-radius: 5px;
 }
 
+.portfolio-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.portfolio-cta p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
 .section-divider {
     height: 4px;
     background: var(--aged-bronze);
@@ -255,11 +299,37 @@ section {
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background: var(--matte-black);
+    color: var(--soft-neutral);
+    padding: 20px 0;
     text-align: center;
-    padding: 10px;
 }
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer nav ul li {
+    display: inline;
+}
+
+footer nav ul li a {
+    color: var(--soft-neutral);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: var(--rustic-orange);
+}
+
 
 @media (max-width: 768px) {
     nav ul {
