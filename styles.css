@@ -315,12 +315,61 @@ section {
     }
 }
 
-
-.contact-section, .quote-section {
-    background: url('/assets/images/metal-texture.jpg') no-repeat center center/cover;
-    padding: 50px 20px;
-    color: var(--soft-neutral);
+.contact-header {
+    text-align: center;
+    padding: 40px;
 }
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--soft-neutral);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form in the container */
+}
+
+label {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--warm-brown);
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: left; /* Ensures text inside the fields starts from the left */
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: var(--midnight-blue);
+    color: var(--soft-neutral);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background: var(--rustic-orange);
+}
+
 
 .content {
     text-align: center;
@@ -332,43 +381,43 @@ section {
     max-width: 90%;  /* Makes it responsive */
     width: 800px;  /* Ideal width for desktops */
     margin: 40px auto;  /* Centers the section */
-    }
+}
 
-    .cta-section {
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-        background: var(--warm-brown);
-        color: var(--soft-neutral);
-        padding: 15px 30px; /* Reduce padding from 40px to 25px */
-        border-radius:0;
-        margin: 20px 0; /* Reduce space above/below */
-    }
+.cta-section {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background: var(--warm-brown);
+    color: var(--soft-neutral);
+    padding: 15px 30px; /* Reduce padding from 40px to 25px */
+    border-radius:0;
+    margin: 20px 0; /* Reduce space above/below */
+}
     
-    .cta-section h2 {
-        font-size: 22px;
-        margin: 0;
-    }
+.cta-section h2 {
+    font-size: 22px;
+    margin: 0;
+}
     
-    .cta-section p {
-        font-size: 14px;
-        margin: 0;
-    }
+.cta-section p {
+    font-size: 14px;
+    margin: 0;
+}
     
-    .cta-section .btn {
-        background: var(--midnight-blue);
-        color: var(--soft-neutral);
-        padding: 8px 16px;
-        font-size: 14px;
-        text-transform: uppercase;
-        border: none;
-        cursor: pointer;
-        transition: background 0.3s ease-in-out;
-    }
+.cta-section .btn {
+    background: var(--midnight-blue);
+    color: var(--soft-neutral);
+    padding: 8px 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
     
-    .cta-section .btn:hover {
-        background: var(--rustic-orange);
-    }
+.cta-section .btn:hover {
+    background: var(--rustic-orange);
+}
     
 
 .gradient-section { /* a softer gradient for sections instead of solid color if needed */
@@ -558,8 +607,8 @@ footer nav ul li a:hover {
     }
 
     .contact-container {
-        flex-direction: column;
-        text-align: center;
+        width: 90%;
+        padding: 15px;
     }
 
     .portfolio-container {
@@ -568,5 +617,13 @@ footer nav ul li a:hover {
 
     .grid-item img {
         max-width: 100%; /* Makes sure images fit smaller screens */
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
     }
 }
