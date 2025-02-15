@@ -53,6 +53,17 @@ header::before {
     background: rgba(0, 0, 0, 0.5);  /* Dark overlay */
     z-index: 0;  /* Ensure overlay is behind content */
 }
+
+header h1 {
+    color: var(--soft-neutral);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    padding: 10px 20px;
+    display: inline-block; /* Keeps it from stretching across the whole width */
+    border-radius: 5px; /* Adds smooth edges */
+    font-weight: 700; /* Makes it bolder */
+}
+
+
   
 header h1, header p {
     position: relative;
@@ -246,15 +257,72 @@ section {
     margin: 0 auto;
 }
 
-.blog {
-    background: rgba(255, 255, 255, 0.5);  /* 50% white transparency */
-    color: #2F2520; /* Change this to the color you like */
-    padding: 20px;
-    border-radius: 8px;  /* Soft rounded edges */
-    max-width: 90%;  /* Makes it responsive */
-    width: 800px;  /* Ideal width for desktops */
-    margin: 40px auto;  /* Centers the section */
+.latest-blog {
+    text-align: center;
+    padding: 40px;
 }
+
+.latest-blog img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.blog-post {
+    background: var(--soft-neutral);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post:hover {
+    transform: scale(1.02);
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.blog-post h3 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    color: var(--warm-brown);
+}
+
+.blog-post a {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--deep-green);
+    transition: color 0.3s ease;
+}
+
+.blog-post a:hover {
+    color: var(--rustic-orange);
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .contact-section, .quote-section {
     background: url('/assets/images/metal-texture.jpg') no-repeat center center/cover;
