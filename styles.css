@@ -145,11 +145,13 @@ nav ul li {
 }
 
 nav ul li a {
+    font-family: 'Roboto Slab', sans-serif; /* Use sans-serif for all nav items */
     color: var(--soft-neutral);
     text-decoration: none;
     font-size: 16px; /* Reduce font size slightly if needed */
     font-weight: 500;
     padding: 5px 10px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -312,6 +314,12 @@ footer {
     width: 100%;
 }
 
+footer nav {
+    position: relative; /* Ensures footer nav stays in the footer */
+    width: 100%;
+    margin-top: 20px;
+}
+
 footer nav ul {
     list-style: none;
     padding: 0;
@@ -328,6 +336,7 @@ footer nav ul li {
 footer nav ul li a {
     color: var(--soft-neutral);
     text-decoration: none;
+    font-family: 'Roboto Slab', sans-serif; /* Ensures it uses the body font */
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease;
