@@ -405,14 +405,14 @@ button[type="submit"]:hover {
 }
     
 .cta-section .btn {
-    background: var(--midnight-blue);
-    color: var(--soft-neutral);
-    padding: 8px 16px;
-    font-size: 14px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+    height: auto; /* Removes excessive height */
+    line-height: 1.5; /* Centers text inside button */
+    min-width: 150px;
 }
     
 .cta-section .btn:hover {
@@ -658,6 +658,17 @@ footer nav ul li a:hover {
     }
 
     button[type="submit"] {
+        font-size: 16px;
+    }
+
+    .cta-section {
+        padding: 15px; /* Reduces excess padding */
+    }
+
+    .cta-section .btn {
+        width: 80%; /* Keeps button width consistent */
+        max-width: 250px; /* Prevents button from being too wide */
+        padding: 12px 15px;
         font-size: 16px;
     }
 }
