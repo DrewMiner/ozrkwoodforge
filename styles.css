@@ -30,7 +30,7 @@ body, main {
 
 header {
     position: relative;
-    background-image: url('assets/images/banner-image.webp');
+    background-image: url('/assets/images/banner-image.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
