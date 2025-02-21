@@ -490,7 +490,8 @@ button[type="submit"]:hover {
 
 .hero-slideshow img {
     width: 100%;
-    height: auto;
+    height: 500px;
+    object-fit: cover;
     border-radius: 10px;
     position: absolute;
     opacity: 0;
