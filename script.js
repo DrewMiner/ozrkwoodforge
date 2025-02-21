@@ -39,7 +39,7 @@ fetch('/blog.json')
                 <h3>${post.title}</h3>
                 <p><small>${post.date}</small></p>
                 <p>${excerpt}</p>
-                <a href="#">Read More</a>
+                <a href="blog-post.html?post=${post.slug}" class="read-more">Read More</a>
             `;
 
             blogContainer.appendChild(blogPost);

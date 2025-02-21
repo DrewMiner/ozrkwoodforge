@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="styles.min.css">
+</head>
+<body>
+    <header>
+    <h1 id="post-title">Loading...</h1>
+    <p id="post-date"></p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section>
+        <img id="post-image" style="max-width: 100%; display: none;">
+        <p id="post-content">Loading...</p>
+    </section>
+    <footer>
+    <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+</footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const postSlug = urlParams.get('post');
+
+        fetch('/blog.json')
+            .then(response => response.json())
+            .then(posts => {
+                let post = posts.find(p => p.slug === postSlug);
+                if (!post) {
+                    document.getElementById('post-title').innerText = "Post Not Found";
+                    return;
+                }
+
+                document.getElementById('post-title').innerText = post.title;
+                document.getElementById('post-date').innerText = post.date;
+                document.getElementById('post-content').innerText = post.content;
+                
+                if (post.image) {
+                    let imgElement = document.getElementById('post-image');
+                    imgElement.src = post.image;
+                    imgElement.style.display = "block";
+                }
+            })
+            .catch(error => console.log('Error loading blog post:', error));
+    </script>
+</body>
+</html>
