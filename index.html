@@ -73,7 +73,6 @@
     <section class="latest-blog">
         <h2>Latest from the Blog</h2>
         <div id="latest-blog-post">Loading latest post...</div>
-        <a href="blog.html" class="btn">Read More</a>
     </section>
     
     <section class="cta-section">
@@ -124,7 +123,7 @@
                 <h3>${latestPost.title}</h3>
                 <p><small>${latestPost.date}</small></p>
                 <p>${excerpt}</p>
-                <a href="blog-post.html?post=${latestPost.slug}" class="read-more">Read More</a>
+                <a href="blog-post.html?post=${latestPost.slug}" class="btn">Read More</a>
             `;
         })
         .catch(error => {

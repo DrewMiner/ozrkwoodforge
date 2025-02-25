@@ -46,3 +46,15 @@ fetch('/blog.json')
         });
     })
     .catch(error => console.log('Error loading blog posts:', error));
+
+    // header-back-button
+    // Ensure both back buttons are visible
+let mainBackButton = document.getElementById('back-button');
+if (mainBackButton) {
+    mainBackButton.style.opacity = "1";
+}
+
+let headerBackButton = document.getElementById('header-back-button');
+if (headerBackButton) {
+    headerBackButton.style.opacity = "1";
+}

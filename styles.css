@@ -630,6 +630,24 @@ footer nav ul li a:hover {
     color: var(--rustic-orange);
 }
 
+#back-button {
+    display: block; /* Ensures it behaves like a block element for centering */
+    width: fit-content; /* Keeps the button only as wide as needed */
+    margin: 30px auto; /* Centers it horizontally and adds space above */
+    padding: 12px 20px;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--primary-color); /* Ensure it matches your theme */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: var(--accent-color); /* Changes color on hover */
+}
+
 
 @media (max-width: 768px) {
     nav ul {
