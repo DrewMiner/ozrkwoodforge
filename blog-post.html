@@ -10,7 +10,7 @@
     <header>
         <h1 id="post-title">Loading...</h1>
         <p id="post-date"></p>
-        <a id="back-button" href="blog.html" class="btn">← Back to Blog</a>
+        <a id="header-back-button" href="blog.html" class="btn">← Back to Blog</a>
     </header>
     
     <section>
@@ -20,56 +20,62 @@
 
     <a id="back-button" href="blog.html" class="btn">← Back to Blog</a>
 
-
     <footer>
         <p>&copy; 2024 OZRK WoodForge.</p>
     </footer> 
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const postSlug = urlParams.get('post');
-
-    fetch('/blog.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(posts => {
-            console.log("Fetched blog posts:", posts); // ✅ This helps debug
-            let post = posts.find(p => p.slug === postSlug);
-            if (!post) {
-                document.getElementById('post-title').innerText = "Post Not Found";
-                document.getElementById('post-content').innerText = "Sorry, this post doesn't exist.";
-                return;
-            }
-
-            document.getElementById('post-title').innerText = post.title;
-            document.getElementById('post-date').innerText = post.date;
-            document.getElementById('post-content').innerText = post.content;
-
-            if (post.image) {
-                let imgElement = document.getElementById('post-image');
-                if (imgElement) {  // Check if the element exists
-                    imgElement.src = post.image;
-                    imgElement.style.display = "block";
-                }
-            }
-
-
-            // Enable the back button
-            let backButton = document.getElementById('back-button');
-            backButton.href = "blog.html";
-            backButton.style.opacity = "1"; // Make it fully visible
-        })
-        .catch(error => {
-            document.getElementById('post-title').innerText = "Error Loading Post";
-            console.error('Error loading blog post:', error);
+            console.log("JavaScript is running!");
+        
+            // Get URL parameter for the blog post
+            const urlParams = new URLSearchParams(window.location.search);
+            const postSlug = urlParams.get('post');
+        
+            fetch('/blog.json')
+                .then(response => response.json())
+                .then(posts => {
+                    let post = posts.find(p => p.slug === postSlug);
+                    if (!post) {
+                        document.getElementById('post-title').innerText = "Post Not Found";
+                        document.getElementById('post-content').innerText = "Sorry, this post doesn't exist.";
+                        return;
+                    }
+        
+                    document.getElementById('post-title').innerText = post.title;
+                    document.getElementById('post-date').innerText = post.date;
+                    document.getElementById('post-content').innerText = post.content;
+        
+                    if (post.image) {
+                        let imgElement = document.getElementById('post-image');
+                        imgElement.src = post.image;
+                        imgElement.style.display = "block";
+                    }
+        
+                    // ✅ Ensure BOTH back buttons work properly AFTER the page fully loads
+                    setTimeout(() => {
+                        let mainBackButton = document.getElementById('back-button');
+                        if (mainBackButton) {
+                            mainBackButton.style.opacity = "1";
+                        }
+        
+                        let headerBackButton = document.getElementById("header-back-button");
+                        if (headerBackButton) {
+                            console.log("Back button found!");
+                            headerBackButton.style.opacity = "1";  // Ensure it's visible
+                            headerBackButton.href = "blog.html";   // Ensure it links correctly
+                        } else {
+                            console.log("Back button NOT found!");
+                        }
+                    }, 500); // ✅ Delay execution slightly to ensure everything is loaded
+        
+                })
+                .catch(error => {
+                    document.getElementById('post-title').innerText = "Error Loading Post";
+                    console.error('Error loading blog post:', error);
+                });
         });
-});
-
-    </script>
+        </script>
+        
 </body>
 </html>
