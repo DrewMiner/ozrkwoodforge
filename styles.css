@@ -17,7 +17,7 @@ body {
     padding-top: 50px; /* Pushes content down below navbar */
     color: var(--warm-brown);
     background-color: var(--soft-neutral);
-    background-image: url('images/background-01.jpg');  /* Change to your image */
+    background-image: url('/assets/images/noise-texture-alt.png');  /* Change to your image */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
