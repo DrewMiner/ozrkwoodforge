@@ -35,6 +35,7 @@
             return response.json();
         })
         .then(posts => {
+            console.log("Fetched blog posts:", posts); // ✅ This helps debug
             let post = posts.find(p => p.slug === postSlug);
             if (!post) {
                 document.getElementById('post-title').innerText = "Post Not Found";
@@ -48,9 +49,12 @@
 
             if (post.image) {
                 let imgElement = document.getElementById('post-image');
-                imgElement.src = post.image;
-                imgElement.style.display = "block";
+                if (imgElement) {  // Check if the element exists
+                    imgElement.src = post.image;
+                    imgElement.style.display = "block";
+                }
             }
+
 
             // Enable the back button
             let backButton = document.getElementById('back-button');
