@@ -27,6 +27,7 @@
 
       gtag('config', 'G-YZT26KCHBM');
     </script>
+
 </head>
 <body>
 
@@ -69,30 +70,44 @@
 
     <script>
         fetch('/blog.json')
-            .then(response => response.json())
-            .then(posts => {
-                let blogContainer = document.getElementById('blog-section');
-                blogContainer.innerHTML = "";
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(posts => {
+        let blogContainer = document.getElementById('blog-section');
+        blogContainer.innerHTML = ""; // Clear default text
 
-                posts.forEach(post => {
-                    let blogPost = document.createElement('div');
-                    blogPost.classList.add('blog-post');
+        if (!posts || posts.length === 0) {
+            blogContainer.innerHTML = "<p>No blog posts available.</p>";
+            return;
+        }
 
-                    let imageHTML = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
+        posts.forEach(post => {
+            let blogPost = document.createElement('div');
+            blogPost.classList.add('blog-post');
 
-                    blogPost.innerHTML = `
-                        ${imageHTML}
-                        <h3>${post.title}</h3>
-                        <p><small>${post.date}</small></p>
-                        <p>${post.excerpt}</p>
-                        <a href="#">Read More</a>
-                    `;
+            let imageHTML = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
+            let excerpt = post.excerpt ? post.excerpt : post.content.substring(0, 100) + "...";
 
-                    blogContainer.appendChild(blogPost);
-                });
-            })
-            .catch(error => console.log('Error loading blog posts:', error));
-    </script>
+            blogPost.innerHTML = `
+                ${imageHTML}
+                <h3>${post.title}</h3>
+                <p><small>${post.date}</small></p>
+                <p>${excerpt}</p>
+                <a href="blog-post.html?post=${post.slug}" class="read-more">Read More</a>
+            `;
+
+            blogContainer.appendChild(blogPost);
+        });
+    })
+    .catch(error => {
+        document.getElementById('blog-section').innerHTML = "<p>Error loading blog posts.</p>";
+        console.error('Error loading blog posts:', error);
+    });
+</script>
 <script src="script.min.js"></script>
 </body>
 </html>

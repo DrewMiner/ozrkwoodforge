@@ -101,35 +101,38 @@
     <!-- JavaScript for loading text & blog posts -->
     <script>
        // Load static text from info.txt
-	fetch('/info.txt')
-  	  .then(response => response.text())
-  	  .then(text => {
- 	       let staticTextContainer = document.getElementById('static-text'); // Ensure you have this ID in your HTML
-	        staticTextContainer.innerHTML = text
-            	.split("\n").map(para => `<p>${para.trim()}</p>`).join("");
-    	})
-    	.catch(error => console.log('Error loading text file:', error));
-	
-	// Load blog posts from blog.json
-    fetch('/blog.json')
-        .then(response => response.json())
-        .then(posts => {
-            if (posts.length > 0) {
-                let latestPost = posts[0]; // Get the most recent post (assuming the newest is first)
-                let blogContainer = document.getElementById('latest-blog-post');
-
-                let imageHTML = latestPost.image ? `<img src="${latestPost.image}" alt="${latestPost.title}">` : "";
-
-                blogContainer.innerHTML = `
-                    ${imageHTML}
-                    <h3>${latestPost.title}</h3>
-                    <p><small>${latestPost.date}</small></p>
-                    <p>${latestPost.excerpt}</p>
-                `;
-            }
+       fetch('/blog.json')
+         .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }   
+            return response.json();
         })
-        .catch(error => console.log('Error loading latest blog post:', error));
+        .then(posts => {
+            let blogContainer = document.getElementById('latest-blog-post');
+            if (!posts || posts.length === 0) {
+                blogContainer.innerHTML = "<p>No blog posts available.</p>";
+                return;
+            }
+
+            let latestPost = posts[0]; // Get the most recent post
+            let imageHTML = latestPost.image ? `<img src="${latestPost.image}" alt="${latestPost.title}">` : "";
+            let excerpt = latestPost.excerpt ? latestPost.excerpt : latestPost.content.substring(0, 100) + "...";
+
+            blogContainer.innerHTML = `
+                ${imageHTML}
+                <h3>${latestPost.title}</h3>
+                <p><small>${latestPost.date}</small></p>
+                <p>${excerpt}</p>
+                <a href="blog-post.html?post=${latestPost.slug}" class="read-more">Read More</a>
+            `;
+        })
+        .catch(error => {
+            document.getElementById('latest-blog-post').innerHTML = "<p>Error loading blog post.</p>";
+            console.error('Error loading latest blog post:', error);
+        });
     </script>
+    
     <script src="script.min.js"></script>
 </body>
 </html>
