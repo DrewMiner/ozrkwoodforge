@@ -54,21 +54,23 @@
         
                     // ✅ Ensure BOTH back buttons work properly AFTER the page fully loads
                     setTimeout(() => {
-                        let mainBackButton = document.getElementById('back-button');
-                        if (mainBackButton) {
-                            mainBackButton.style.opacity = "1";
-                        }
-        
                         let headerBackButton = document.getElementById("header-back-button");
+
                         if (headerBackButton) {
                             console.log("Back button found!");
-                            headerBackButton.style.opacity = "1";  // Ensure it's visible
-                            headerBackButton.href = "blog.html";   // Ensure it links correctly
+                            headerBackButton.style.opacity = "1";
+                            headerBackButton.href = "blog.html";
+            
+                    // ✅ TEMPORARY: Force button to be clickable via JavaScript
+                            headerBackButton.addEventListener("click", function (event) {
+                                event.preventDefault();
+                                console.log("Back button clicked!");
+                                window.location.href = "blog.html";
+                            });
                         } else {
                             console.log("Back button NOT found!");
                         }
-                    }, 500); // ✅ Delay execution slightly to ensure everything is loaded
-        
+                    }, 500);
                 })
                 .catch(error => {
                     document.getElementById('post-title').innerText = "Error Loading Post";
