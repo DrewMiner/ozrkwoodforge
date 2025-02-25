@@ -491,12 +491,13 @@ button[type="submit"]:hover {
     flex: 1;
     position: relative;
     max-width: 500px;
-    height: 300px; /* Ensures slideshow height consistency */
+    height: 500px; /* Ensures slideshow height consistency */
+    overflow: hidden; /* Prevents overflow from larger images */
 }
 
 .hero-slideshow img {
     width: 100%;
-    height: 500px;
+    height: 100%; /* to match container */
     object-fit: cover;
     border-radius: 10px;
     position: absolute;
