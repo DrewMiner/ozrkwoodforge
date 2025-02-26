@@ -52,7 +52,7 @@ fetch("/blog.json")
 fetch("/blog.json")
     .then(response => response.json())
     .then(posts => {
-        let blogContainer = document.getElementById("latest-blog-post");
+        let blogContainer = document.getElementById("content");
         blogContainer.innerHTML = "";
 
         if (!posts || posts.length === 0) {
