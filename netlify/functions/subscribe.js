@@ -24,11 +24,20 @@ export async function handler(event) {
             };
         }
 
+        const apiKey = process.env.BREVO_API_KEY;
+        if (!apiKey) {
+            console.error("❌ API Key is missing! Check Netlify environment variables.");
+            return {
+                statusCode: 500,
+                body: JSON.stringify({ error: "Missing API Key in server environment" })
+            };
+        }
+
         const response = await fetch("https://api.brevo.com/v3/contacts", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "api-key": process.env.BREVO_API_KEY
+                "api-key": apiKey
             },
             body: JSON.stringify({
                 email: email,

@@ -52,7 +52,7 @@ fetch("/blog.json")
 fetch("/blog.json")
     .then(response => response.json())
     .then(posts => {
-        let blogContainer = document.getElementById("content");
+        let blogContainer = document.getElementById("latest-blog-post");
         blogContainer.innerHTML = "";
 
         if (!posts || posts.length === 0) {
@@ -86,9 +86,7 @@ if (headerBackButton) {
 }
 
 // EMAIL POPUP FUNCTIONALITY
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ script.js is running!");
-
+document.addEventListener("DOMContentLoaded", function () 
     const popup = document.getElementById("email-popup");
     const closePopup = document.querySelector(".close-popup");
     const emailForm = document.getElementById("email-form");
