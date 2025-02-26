@@ -374,7 +374,7 @@ button[type="submit"]:hover {
 }
 
 
-.latest-blog-post {
+.content {
     text-align: center;
     padding: 20px;
     background:  rgba(139, 90, 43, 0.8); /* Brown 80% transparent */
