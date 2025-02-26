@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "formdata-polyfill": "^4.0.10",
     "node-fetch": "^3.3.2"
   }
 }
