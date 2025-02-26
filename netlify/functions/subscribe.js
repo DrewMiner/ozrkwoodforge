@@ -2,9 +2,10 @@ import fetch from "node-fetch";
 
 export async function handler(event) {
     console.log("✅ Netlify function started");
-    console.log("📝 Incoming event:", event);
 
     try {
+        console.log("📝 Incoming event:", event);
+
         if (event.httpMethod !== "POST") {
             console.log("❌ Invalid request method:", event.httpMethod);
             return {
