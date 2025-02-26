@@ -96,42 +96,6 @@
         <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
     </footer>
     
-    
-    <!-- JavaScript for loading text & blog posts -->
-    <script>
-       // Load static text from info.txt
-       fetch('/blog.json')
-         .then(response => {
-                if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }   
-            return response.json();
-        })
-        .then(posts => {
-            let blogContainer = document.getElementById('latest-blog-post');
-            if (!posts || posts.length === 0) {
-                blogContainer.innerHTML = "<p>No blog posts available.</p>";
-                return;
-            }
-
-            let latestPost = posts[0]; // Get the most recent post
-            let imageHTML = latestPost.image ? `<img src="${latestPost.image}" alt="${latestPost.title}">` : "";
-            let excerpt = latestPost.excerpt ? latestPost.excerpt : latestPost.content.substring(0, 100) + "...";
-
-            blogContainer.innerHTML = `
-                ${imageHTML}
-                <h3>${latestPost.title}</h3>
-                <p><small>${latestPost.date}</small></p>
-                <p>${excerpt}</p>
-                <a href="blog-post.html?post=${latestPost.slug}" class="btn">Read More</a>
-            `;
-        })
-        .catch(error => {
-            document.getElementById('latest-blog-post').innerHTML = "<p>Error loading blog post.</p>";
-            console.error('Error loading latest blog post:', error);
-        });
-    </script>
-    
     <script src="script.min.js"></script>
 </body>
 </html>
