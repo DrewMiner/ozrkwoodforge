@@ -162,8 +162,8 @@ document.addEventListener("DOMContentLoaded", function ()
         const staticText = document.getElementById("static-text");
         if (staticText) {
             staticText.innerText = text;
+        } else {
+            console.error("❌ Error: #static-text not found in the document.");
         }
     })
     .catch(error => console.log("Error loading text file:", error));
-
-});
