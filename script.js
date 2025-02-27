@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
             slides[currentSlide].style.display = "block"; // Show new slide
             setTimeout(() => {
+                slides[currentSlide].classList.add("active");
                 slides[currentSlide].style.opacity = "1"; // Fade in new slide
             }, 50);
         }, 1000); // Matches the transition duration
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ✅ Start Slideshow Interval
     setInterval(showNextSlide, 4000);
 });
+
 
 // ============================
 // ===== 2. Blog posts =====
