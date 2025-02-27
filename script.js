@@ -15,8 +15,14 @@ let currentSlide = 0;
 
 function showNextSlide() {
     slides[currentSlide].style.opacity = "0"; // Hide current slide
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].style.opacity = "1"; // Show next slide
+    setTimeout(() => {
+        slides[currentSlide].style.display = "none"; // Prevent stacking issues
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.display = "block"; // Show next slide
+        setTimeout(() => {
+            slides[currentSlide].style.opacity = "1"; // Fade in new slide
+        }, 50);
+    }, 1000); // Matches the transition duration
 }
 
 setInterval(showNextSlide, 4000); // Change slide every 4 seconds
