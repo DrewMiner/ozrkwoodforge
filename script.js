@@ -9,45 +9,37 @@
 // ===== 1. Slideshow =====
 // ============================
 
-// Slideshow functionality
-let slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
 
-let slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
-
-function showNextSlide() {
-    slides[currentSlide].style.opacity = "0";  // Fade out current slide
-    setTimeout(() => {
-        slides[currentSlide].style.display = "none"; // Hide the old slide
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].style.display = "block"; // Show new slide
+    // ✅ Function to switch slides
+    function showNextSlide() {
+        slides[currentSlide].classList.remove("active");
+        slides[currentSlide].style.opacity = "0"; // Fade out old slide
         setTimeout(() => {
-            slides[currentSlide].style.opacity = "1"; // Fade in new slide
-        }, 50);
-    }, 1000); // Matches the transition duration
-}
+            slides[currentSlide].style.display = "none"; // Hide old slide
+            currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
+            slides[currentSlide].style.display = "block"; // Show new slide
+            setTimeout(() => {
+                slides[currentSlide].style.opacity = "1"; // Fade in new slide
+            }, 50);
+        }, 1000); // Matches the transition duration
+    }
 
-// ✅ Ensure the first slide is displayed when the page loads
-slides[currentSlide].style.display = "block";
-slides[currentSlide].style.opacity = "1";
-
-setInterval(showNextSlide, 4000);  // Change slide every 4 seconds
-
-// Debugging message to confirm script is running
-console.log("✅ script.js is running!");
-
-// Initialize slideshow images
-const slides = document.querySelectorAll(".hero-slideshow img");
-let currentSlide = 0;
-setInterval(showNextSlide, 4000);
-
-// FAQ Toggle functionality
-document.querySelectorAll(".faq-question").forEach(question => {
-    question.addEventListener("click", () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
+    // ✅ Ensure the first slide is visible on page load
+    slides.forEach((slide, index) => {
+        if (index === 0) {
+            slide.classList.add("active");
+            slide.style.display = "block";
+            slide.style.opacity = "1";
+        } else {
+            slide.style.display = "none";
+        }
     });
+
+    // ✅ Start Slideshow Interval
+    setInterval(showNextSlide, 4000);
 });
 
 // ============================

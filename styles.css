@@ -208,6 +208,12 @@ section {
     transition: opacity 1s ease-in-out;
 }
 
+/* ✅ Ensure only the active slide is visible */
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
 /* ✅ Make sure the first slide is visible when the page loads */
 .slide:first-child {
     opacity: 1;
