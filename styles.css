@@ -194,30 +194,48 @@ section {
 }
 
 .hero-slideshow {
-    position: relative;  /* ✅ Allows child images to be positioned absolutely */
-    max-width: 300px;
-    height: 200px;       /* ✅ Ensures all images share the same height */
-    overflow: hidden;    /* ✅ Prevents images from stacking downward */
+    position: relative;
+    max-width: 500px;
+    height: 300px;
+    overflow: hidden;
 }
 
-.hero-slideshow img {
+.slide {
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;  /* ✅ Makes all images overlap each other */
-    top: 0;
-    left: 0;
-    opacity: 0;          /* ✅ Initially hides all images */
+    opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.hero-slideshow img:first-child {
-    opacity: 1;  /* ✅ Ensures the first image is visible by default */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
+.slide-text {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: var(--soft-neutral);
+    padding: 10px 15px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.slide:first-child {
+    opacity: 1; /* Make the first slide visible by default */
+}
+
 
 .portfolio-container img {
     width: 100%;          /* ✅ Makes the image responsive */
-    max-width: 600px;     /* ✅ Ensures the image never exceeds this width */
+    max-width: 400px;     /* ✅ Ensures the image never exceeds this width */
     height: auto;         /* ✅ Maintains aspect ratio */
     display: block;       /* ✅ Prevents extra space under the image */
     margin: 0 auto;       /* ✅ Centers the image */

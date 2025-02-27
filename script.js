@@ -1,9 +1,26 @@
+// Table of contents
+// 1. Slideshow 
+// 2. Blog posts
+// 3. Back buttons
+// 4. Email popup
+// 5. Info.txt
+
+// ============================
+// ===== 1. Slideshow =====
+// ============================
+
 // Slideshow functionality
+let slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
 function showNextSlide() {
-    slides[currentSlide].style.opacity = "0";
+    slides[currentSlide].style.opacity = "0"; // Hide current slide
     currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].style.opacity = "1";
+    slides[currentSlide].style.opacity = "1"; // Show next slide
 }
+
+setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+
 
 // Debugging message to confirm script is running
 console.log("✅ script.js is running!");
@@ -20,6 +37,10 @@ document.querySelectorAll(".faq-question").forEach(question => {
         answer.style.display = answer.style.display === "block" ? "none" : "block";
     });
 });
+
+// ============================
+// ===== 2. Blog posts =====
+// ============================
 
 // Load all blog posts
 fetch("/blog.json")
@@ -74,6 +95,10 @@ fetch("/blog.json")
     })
     .catch(error => console.log("Error loading latest blog post:", error));
 
+// ============================    
+// ===== 3. Back buttons =====
+// ============================
+
 // Ensure back buttons are visible
 let mainBackButton = document.getElementById("back-button");
 if (mainBackButton) {
@@ -84,6 +109,10 @@ let headerBackButton = document.getElementById("header-back-button");
 if (headerBackButton) {
     headerBackButton.style.opacity = "1";
 }
+
+// ============================
+// ===== 4. Email popup =====
+// ============================
 
 // EMAIL POPUP FUNCTIONALITY
 document.addEventListener("DOMContentLoaded", function () 
@@ -149,6 +178,10 @@ document.addEventListener("DOMContentLoaded", function ()
             }
         });
     }
+
+    // ============================
+    // ===== 5. Info.txt =====
+    // ============================
 
     // Load static text from info.txt
     fetch("/info.txt")
