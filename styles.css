@@ -1,3 +1,17 @@
+/* TABLE OF CONTENTS            */
+/* 1. Global Styles & Variables */
+/* 2. Typography                */
+/* 3. Links                     */
+/* 4. Header & Navigation       */
+/* 5. Buttons                   */
+/* 6. Sections & Content        */
+/* 7. Popup                     */
+/* 8. blog post                 */
+/* 9. Footer                    */
+/* 10. Responsive Styles        */
+
+
+
 /* ========== 1. Global Styles & Variables ========== */
 :root {
     --warm-brown: #4A3D36;
@@ -157,6 +171,7 @@ button, .btn {
 
 button:hover, .btn:hover {
     background: var(--rustic-orange);
+    color: var(--midnight-blue);
     transform: scale(1.05);
 }
 
@@ -176,6 +191,41 @@ section {
     max-width: 90%;
     width: 800px;
     margin: 40px auto;
+}
+
+.hero-slideshow {
+    position: relative;  /* ✅ Allows child images to be positioned absolutely */
+    max-width: 300px;
+    height: 200px;       /* ✅ Ensures all images share the same height */
+    overflow: hidden;    /* ✅ Prevents images from stacking downward */
+}
+
+.hero-slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;  /* ✅ Makes all images overlap each other */
+    top: 0;
+    left: 0;
+    opacity: 0;          /* ✅ Initially hides all images */
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slideshow img:first-child {
+    opacity: 1;  /* ✅ Ensures the first image is visible by default */
+}
+
+.portfolio-container img {
+    width: 100%;          /* ✅ Makes the image responsive */
+    max-width: 600px;     /* ✅ Ensures the image never exceeds this width */
+    height: auto;         /* ✅ Maintains aspect ratio */
+    display: block;       /* ✅ Prevents extra space under the image */
+    margin: 0 auto;       /* ✅ Centers the image */
+    border-radius: 8px;   /* ✅ Optional: Adds rounded corners */
+}
+
+.cta-section {
+    text-align: center;
 }
 
 /* ========== 7. Popup ========== */
@@ -220,7 +270,18 @@ section {
     color: #000;
 }
 
-/* ========== 8. Footer ========== */
+/* ========== 8. blog post ========== */
+
+.latest-blog img {
+    width: 100%;          /* ✅ Makes the image responsive */
+    max-width: 600px;     /* ✅ Ensures the image never exceeds this width */
+    height: auto;         /* ✅ Maintains aspect ratio */
+    display: block;       /* ✅ Prevents extra space under the image */
+    margin: 0 auto;       /* ✅ Centers the image */
+    border-radius: 8px;   /* ✅ Optional: Adds rounded corners */
+}
+
+/* ========== 9. Footer ========== */
 footer {
     background: var(--matte-black);
     color: var(--soft-neutral);
@@ -252,7 +313,7 @@ footer nav ul li a:hover {
     color: var(--rustic-orange);
 }
 
-/* ========== 9. Responsive Styles ========== */
+/* ========== 10. Responsive Styles ========== */
 @media (max-width: 768px) {
     nav ul {
         flex-wrap: nowrap;
