@@ -13,20 +13,26 @@
 let slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 
+let slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
 function showNextSlide() {
-    slides[currentSlide].style.opacity = "0"; // Hide current slide
+    slides[currentSlide].style.opacity = "0";  // Fade out current slide
     setTimeout(() => {
-        slides[currentSlide].style.display = "none"; // Prevent stacking issues
+        slides[currentSlide].style.display = "none"; // Hide the old slide
         currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].style.display = "block"; // Show next slide
+        slides[currentSlide].style.display = "block"; // Show new slide
         setTimeout(() => {
             slides[currentSlide].style.opacity = "1"; // Fade in new slide
         }, 50);
     }, 1000); // Matches the transition duration
 }
 
-setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+// ✅ Ensure the first slide is displayed when the page loads
+slides[currentSlide].style.display = "block";
+slides[currentSlide].style.opacity = "1";
 
+setInterval(showNextSlide, 4000);  // Change slide every 4 seconds
 
 // Debugging message to confirm script is running
 console.log("✅ script.js is running!");

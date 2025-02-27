@@ -205,8 +205,14 @@ section {
     width: 100%;
     height: 100%;
     opacity: 0;
-    display: none;
     transition: opacity 1s ease-in-out;
+}
+
+/* ✅ Make sure the first slide is visible when the page loads */
+.slide:first-child {
+    opacity: 1;
+    position: relative;
+    display: block;
 }
 
 .slide img {
@@ -217,10 +223,10 @@ section {
 
 .slide-text {
     position: absolute;
-    bottom: 20px; /* Adjust as needed */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     color: var(--soft-neutral);
     padding: 10px 15px;
     font-size: 18px;
@@ -228,11 +234,6 @@ section {
     border-radius: 5px;
     width: 80%;
 }
-
-.slide:first-child {
-    opacity: 1; /* Make the first slide visible by default */
-}
-
 
 .portfolio-container img {
     width: 100%;          /* ✅ Makes the image responsive */
