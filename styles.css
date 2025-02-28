@@ -205,15 +205,15 @@ section {
     width: 100%;
     height: 100%;
     opacity: 0;
+    display: none;  /* ✅ Hides all slides except the active one */
+    z-index: 0;     /* ✅ Ensures slides layer correctly */
     transition: opacity 1s ease-in-out;
-    display: none;  /* ✅ Ensures only one slide is visible at a time */
 }
 
-/* ✅ Ensure only the active slide is visible */
 .slide.active {
+    display: block;  /* ✅ Makes the active slide visible */
     opacity: 1;
-    display: block;
-    position: relative;
+    z-index: 1;      /* ✅ Ensures active slide is on top */
 }
 
 /* ✅ Make sure the first slide is visible when the page loads */

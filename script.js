@@ -15,19 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ✅ Function to switch slides
     function showNextSlide() {
+        // ✅ Hide the current slide
         slides[currentSlide].classList.remove("active");
-        slides[currentSlide].style.opacity = "0"; // Fade out old slide
+        slides[currentSlide].style.opacity = "0"; 
+        
         setTimeout(() => {
-            slides[currentSlide].style.display = "none"; // Hide old slide
-            currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
-            slides[currentSlide].style.display = "block"; // Show new slide
+            slides[currentSlide].style.display = "none"; // ✅ Fully hide old slide
+    
+            // ✅ Move to the next slide
+            currentSlide = (currentSlide + 1) % slides.length;
+    
+            // ✅ Show the new slide
+            slides[currentSlide].style.display = "block";
             setTimeout(() => {
                 slides[currentSlide].classList.add("active");
-                slides[currentSlide].style.opacity = "1"; // Fade in new slide
+                slides[currentSlide].style.opacity = "1"; // ✅ Fade in new slide
             }, 50);
-        }, 1000); // Matches the transition duration
+        }, 1000); // ✅ Matches transition duration
     }
-
+    
     // ✅ Ensure the first slide is visible on page load
     slides.forEach((slide, index) => {
         if (index === 0) {
@@ -38,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
             slide.style.display = "none";
         }
     });
+    
+    // ✅ Start Slideshow Interval
+    setInterval(showNextSlide, 4000);
+    
 
     // ✅ Start Slideshow Interval
     setInterval(showNextSlide, 4000);
@@ -121,7 +131,7 @@ if (headerBackButton) {
 // ============================
 
 // EMAIL POPUP FUNCTIONALITY
-document.addEventListener("DOMContentLoaded", function () 
+document.addEventListener("DOMContentLoaded", function () { 
     const popup = document.getElementById("email-popup");
     const closePopup = document.querySelector(".close-popup");
     const emailForm = document.getElementById("email-form");
@@ -184,6 +194,8 @@ document.addEventListener("DOMContentLoaded", function ()
             }
         });
     }
+});  
+
 
     // ============================
     // ===== 5. Info.txt =====
