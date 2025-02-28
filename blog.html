@@ -53,8 +53,8 @@
     </section>
 
     <section class="blog-container" id="blog-section">
-        <!-- Blog posts will be dynamically loaded here via JavaScript -->
-    </section>
+        <!-- Blog excerpts will load here -->
+    </section>    
 
     <footer>
         <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
@@ -73,46 +73,6 @@
     </div>
     </footer>
 
-    <script>
-        fetch('/blog.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(posts => {
-        let blogContainer = document.getElementById('blog-section');
-        blogContainer.innerHTML = ""; // Clear default text
-
-        if (!posts || posts.length === 0) {
-            blogContainer.innerHTML = "<p>No blog posts available.</p>";
-            return;
-        }
-
-        posts.forEach(post => {
-            let blogPost = document.createElement('div');
-            blogPost.classList.add('blog-post');
-
-            let imageHTML = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
-            let excerpt = post.excerpt ? post.excerpt : post.content.substring(0, 100) + "...";
-
-            blogPost.innerHTML = `
-                ${imageHTML}
-                <h3>${post.title}</h3>
-                <p><small>${post.date}</small></p>
-                <p>${excerpt}</p>
-                <a href="blog-post.html?post=${post.slug}" class="read-more">Read More</a>
-            `;
-
-            blogContainer.appendChild(blogPost);
-        });
-    })
-    .catch(error => {
-        document.getElementById('blog-section').innerHTML = "<p>Error loading blog posts.</p>";
-        console.error('Error loading blog posts:', error);
-    });
-</script>
 <script src="script.min.js"></script>
 </body>
 </html>

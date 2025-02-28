@@ -58,32 +58,53 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===== 2. Blog posts =====
 // ============================
 
-// Load all blog posts
+// Load all blog posts (Excerpts Only for blog.html)
+console.log("✅ Blog script is running!");
+
 fetch("/blog.json")
     .then(response => response.json())
     .then(posts => {
+        console.log("✅ Blog JSON Loaded:", posts);
         let blogContainer = document.getElementById("blog-section");
-        blogContainer.innerHTML = "";
+        blogContainer.innerHTML = ""; // ✅ Clears previous content
 
         posts.forEach(post => {
+            console.log("Raw blog content:", post.content); // ✅ Debugging (inside loop)
+
             let blogPost = document.createElement("div");
             blogPost.classList.add("blog-post");
 
-            let imageHTML = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
-            let excerpt = post.excerpt ? post.excerpt : post.content.substring(0, 100) + "...";
+            let image = document.createElement("img");
+            image.src = post.image;
+            image.alt = post.title;
+            image.classList.add("blog-image");  // ✅ Adds class to the image
 
-            blogPost.innerHTML = `
-                ${imageHTML}
-                <h3>${post.title}</h3>
-                <p><small>${post.date}</small></p>
-                <p>${excerpt}</p>
-                <a href="blog-post.html?post=${post.slug}" class="read-more">Read More</a>
-            `;
+            let title = document.createElement("h3");
+            title.innerText = post.title;
+
+            let date = document.createElement("p");
+            date.innerHTML = `<small>${post.date}</small>`;
+
+            let excerpt = document.createElement("p"); // ✅ Ensures only an excerpt appears in blog.html
+            excerpt.innerText = post.excerpt ? post.excerpt : post.content.substring(0, 100) + "...";
+
+            let readMore = document.createElement("a");
+            readMore.href = `blog-post.html?post=${post.slug}`;
+            readMore.classList.add("read-more");
+            readMore.innerText = "Read More";
+
+            blogPost.appendChild(image);
+            blogPost.appendChild(title);
+            blogPost.appendChild(date);
+            blogPost.appendChild(excerpt); // ✅ Adds excerpt
+            blogPost.appendChild(readMore);
 
             blogContainer.appendChild(blogPost);
         });
     })
     .catch(error => console.log("Error loading blog posts:", error));
+
+
 
 // Load latest blog post for homepage
 fetch("/blog.json")
@@ -110,6 +131,44 @@ fetch("/blog.json")
         `;
     })
     .catch(error => console.log("Error loading latest blog post:", error));
+
+    // ✅ Load full blog post for blog-post.html
+if (document.querySelector("#post-content")) {  // ✅ Ensures this only runs on blog-post.html
+    const urlParams = new URLSearchParams(window.location.search);
+    const postSlug = urlParams.get("post");
+
+    fetch("/blog.json")
+        .then(response => response.json())
+        .then(posts => {
+            let post = posts.find(p => p.slug.toLowerCase() === postSlug.toLowerCase());
+            if (!post) {
+                document.getElementById("post-title").innerText = "Post Not Found";
+                return;
+            }            
+            let postTitle = document.getElementById("post-title");
+            let postDate = document.getElementById("post-date");
+            let postContent = document.getElementById("post-content");
+            
+            console.log("🔍 Found Elements:", { postTitle, postDate, postContent });            
+            
+            document.getElementById("post-title").innerText = post.title;
+            document.getElementById("post-date").innerText = post.date;
+
+            let formattedContent = post.content
+                .replace(/##\s*(.+)/g, "<h2>$1</h2>")  // ✅ Converts `## Heading` into `<h2>Heading</h2>`
+                .replace(/\n{2,}/g, "</p><p>")  // ✅ Converts double line breaks into paragraphs
+                .replace(/\n/g, " ");  // ✅ Ensures proper spacing
+
+            document.getElementById("post-content").innerHTML = formattedContent; // ✅ Shows full blog post in blog-post.html
+
+            if (post.image) {
+                let imgElement = document.getElementById("post-image");
+                imgElement.src = post.image;
+                imgElement.style.display = "block";
+            }
+        })
+        .catch(error => console.log("Error loading blog post:", error));
+}
 
 // ============================    
 // ===== 3. Back buttons =====
