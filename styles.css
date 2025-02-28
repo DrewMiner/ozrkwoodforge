@@ -190,7 +190,8 @@ button, .btn {
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
     background: var(--rustic-orange);
     color: var(--midnight-blue);
     transform: scale(1.05);
@@ -324,6 +325,25 @@ section {
 .close-popup:hover {
     color: #000;
 }
+
+.contact-form form {
+    display: flex;
+    flex-direction: column; /* ✅ Stacks elements vertically */
+    gap: 10px; /* ✅ Adds space between fields */
+}
+
+.contact-form label, 
+.contact-form input, 
+.contact-form textarea, 
+.contact-form button {
+    width: 100%; /* ✅ Ensures all elements stretch full width */
+    max-width: 500px; /* ✅ Keeps form from being too wide */
+}
+
+.contact-form textarea {
+    resize: vertical; /* ✅ Allows resizing up/down but not sideways */
+}
+
 
 /* =================================================== */
 /* ========== 8. blog post ========== */
