@@ -120,12 +120,11 @@ header h1 {
     font-weight: 700;
 }
 
-.blog-header {
+.blog-post-header {
     color: var(--soft-neutral);
     font-size: 2.2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
 
 /* Navigation Bar */
 nav {
