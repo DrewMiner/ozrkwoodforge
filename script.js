@@ -106,7 +106,7 @@ fetch("/blog.json")
 
 
 
-// Load latest blog post for homepage
+// Load latest blog post for index.html
 fetch("/blog.json")
     .then(response => response.json())
     .then(posts => {
