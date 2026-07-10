@@ -1,129 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OZRK WoodForge creates custom handmade furniture, blending rustic and modern design. Based in Northwest Arkansas, we craft tables, shelves, and decor with heirloom-quality craftsmanship.">
-    <meta name="keywords" content="custom furniture, handmade woodwork, woodworking, live edge tables, OZRK WoodForge, Northwest Arkansas">
-    <meta name="author" content="OZRK WoodForge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="OZRK WoodForge - Custom Handmade Furniture">
-    <meta property="og:description" content="Heirloom-quality custom wood furniture handcrafted in Northwest Arkansas.">
-    <meta property="og:image" content="https://ozrkwoodforge.com/assets/images/banner-image.jpg">
-    <meta property="og:url" content="https://ozrkwoodforge.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OZRK WoodForge - Custom Handmade Furniture">
-    <meta name="twitter:description" content="Handcrafted furniture blending rustic charm and modern design.">
-    <meta name="twitter:image" content="https://ozrkwoodforge.com/assets/images/banner-image.jpg">
-    <title>OZRK WoodForge | Custom Handmade Furniture</title>
-    <link rel="stylesheet" href="styles.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZT26KCHBM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      gtag('config', 'G-YZT26KCHBM');
-    </script>
+  <!-- Search engine information -->
+  <title>
+    OZRK WoodForge | Custom Woodworking & Home Improvement in Northwest Arkansas
+  </title>
+
+  <meta
+    name="description"
+    content="OZRK WoodForge helps Northwest Arkansas homeowners improve the way their homes work through custom woodworking, built-ins, shelving, finish carpentry, doors, windows, basement finishing, and general repairs."
+  />
+
+  <!-- Social sharing preview -->
+  <meta property="og:title" content="OZRK WoodForge" />
+  <meta
+    property="og:description"
+    content="Thoughtful custom woodworking and home improvement for Northwest Arkansas homeowners."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ozrkwoodforge.com/" />
+
+  <!-- Browser theme color -->
+  <meta name="theme-color" content="#242321" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <!-- Email Capture Popup -->
-    <div id="email-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-popup">&times;</span> <!-- ✅ "X" button to close popup -->
-            <h2>Join Our Woodworking Community</h2>
-            <p>Get exclusive updates, woodworking tips, and special offers straight to your inbox.</p>
-            <iframe 
-                width="540" 
-                height="305" 
-                src="https://c7a1c3c4.sibforms.com/serve/MUIFACy5PPrpymSKQVhiO19VX61Kgoh8b7Ie7itmTkcTXJn7lw_-pjgTaSuJ6mmluJZGwYIaslk56ESbMqWIp130J0qYl4tuQtc3zrOssamkgEkGNQvFblz9oWKHDFbVHoIYQNFRoZbIamn3vFDyLmWWdDCnsC6-J5QF9H0trdcPZyaVwgNqGWg7ZyvhRVeKscuuD5GoYvW8Fbp4" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"
-                style="border: none; max-width: 400px; display: block; margin: 0 auto;">
-            </iframe>
-            <p class="privacy-text">We respect your privacy. <a href="privacy-policy.html">Learn more</a>.</p>
-        </div>
+  <!-- Accessibility link for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =====================================================
+       SITE HEADER
+       ===================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-logo" href="#top" aria-label="OZRK WoodForge home">
+        OZRK WoodForge
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#your-space">Your Space</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#process">Process</a>
+        <a class="nav-cta" href="#contact">Let's Talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+    <section class="hero" id="top">
+  <div class="container hero-inner">
+
+    <p class="eyebrow">
+      Custom Woodworking &amp; Home Improvement
+    </p>
+
+    <h1>Your home should support the life you want to live.</h1>
+
+    <p class="hero-copy">
+      Sometimes a home doesn't need to be bigger.
+      It simply needs to work better.
+    </p>
+
+    <p class="hero-copy">
+      Better storage.
+      A room that finally feels finished.
+      A basement with purpose.
+      A space designed around the way you actually live.
+    </p>
+
+    <div class="hero-actions">
+      <a class="button button-primary" href="#contact">
+        Ready to Talk About Your Project?
+      </a>
+
+      <a class="phone-link" href="tel:+14795023395">
+        Call or Text (479) 502-3395
+      </a>
     </div>
 
-    <header>
-        <h1>OZRK WoodForge</h1>
-        <p>Forging Beauty, Crafting Home.</p>
-    </header>
-    <div class="sticky-nav">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-            </ul>
-        </nav>
+    <p class="service-area">
+      Serving Washington County and the greater Rogers / Bentonville area.
+    </p>
+
+  </div>
+</section>
+
+    <!-- =====================================================
+     YOUR SPACE
+     ===================================================== -->
+<section class="section" id="your-space">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Your Space</p>
+
+      <h2>Every home has a room that almost works.</h2>
+
+      <p>
+        Maybe the storage never made sense.
+        Maybe the furniture never fit quite right.
+        Maybe the room feels unfinished, even if you cannot immediately explain why.
+      </p>
+
+      <p>
+        The first step is understanding what you want the space to do differently.
+      </p>
     </div>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Custom Handmade Woodworking</h2>
-            <p>Creating heirloom-quality furniture and home decor with timeless craftsmanship.</p>
-        </div>
-        
-        <div class="hero-slideshow">
-            <div class="slide">
-                <img src="/assets/images/project1.jpg" alt="Handcrafted Wood Table">
-                <p class="slide-text">Handcrafted wood table made with precision.</p>
-            </div>
-            <div class="slide">
-                <img src="/assets/images/project2.jpg" alt="Custom Step Stool">
-                <p class="slide-text">Elegant custom step stool designed to fit your space.</p>
-            </div>
-            <div class="slide">
-                <img src="/assets/images/project3.jpg" alt="Custom Cardgame Board">
-                <p class="slide-text">Custom Cardgame Board that blends ergonomics and craftsmanship.</p>
-            </div>
-        </div>
-        
-       
-    </section>
-    
+    <div class="service-grid">
+      <article class="service-card">
+        <h3>Built Around Your Space</h3>
 
-    <section class="content">
-        <h3>Welcome to OZRK WoodForge</h3>
-        <div id="static-text">Loading content...</div> <!-- This will be replaced by info.txt -->
-        <p>We specialize in handcrafted furniture, custom wood decor, and sustainable designs. Every piece tells a story.</p>
-        <a href="portfolio.html" class="btn">View Our Work</a>
-    </section>
-    
-    <section class="cta-section">
-        <h2>Start Your Custom Project Today</h2>
-        <p>Let’s bring your vision to life with handcrafted furniture built to last.</p>
-        <a href="contact.html" class="btn">Request a Quote</a>
-    </section>
+        <p>
+          Custom furniture, built-ins, shelving, and storage designed for the room
+          instead of adapted from something made for somewhere else.
+        </p>
 
-    <section class="latest-blog">
-        <h2>Latest from the Blog</h2>
-        <div id="latest-blog-post">Loading latest post...</div>
-    </section>
-    
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2024 OZRK WoodForge. All rights reserved.</p>
-    </footer>
-    
-    <script src="script.min.js"></script>
-    
+        <ul>
+          <li>Custom furniture</li>
+          <li>Built-ins</li>
+          <li>Shelving</li>
+          <li>Storage solutions</li>
+          <li>Bespoke pieces</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Helping Your Home Work Better</h3>
+
+        <p>
+          Thoughtful improvements and repairs that make a room more useful,
+          complete, and comfortable to live in.
+        </p>
+
+        <ul>
+          <li>Finish carpentry</li>
+          <li>Doors and windows</li>
+          <li>Basement finishing</li>
+          <li>Trim work</li>
+          <li>General repairs</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="section-note">
+      Start with the room, the frustration, or the idea. The solution can come next.
+    </p>
+  </div>
+</section>
+
+    <!-- =====================================================
+     OUR APPROACH
+     ===================================================== -->
+<section class="section section-light" id="approach">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Our Approach</p>
+
+      <h2>Good work is about more than the finished result.</h2>
+
+      <p>
+        A project should feel just as good to live through as it does to live
+        with afterward.
+      </p>
+    </div>
+
+    <div class="expect-grid">
+
+      <article class="expect-item">
+        <h3>Communication</h3>
+
+        <p>
+          Questions deserve answers. Changes deserve conversations.
+          You should never wonder what is happening or what comes next.
+        </p>
+      </article>
+
+      <article class="expect-item">
+        <h3>Preparation</h3>
+
+        <p>
+          Good projects begin with thoughtful planning.
+          Taking the time to prepare usually saves time later.
+        </p>
+      </article>
+
+      <article class="expect-item">
+        <h3>Craftsmanship</h3>
+
+        <p>
+          Quality is found in the details that continue to matter years after
+          the project is finished.
+        </p>
+      </article>
+
+      <article class="expect-item">
+        <h3>Respect</h3>
+
+        <p>
+          Your home should be treated with the same care and attention as the
+          work being done inside it.
+        </p>
+      </article>
+
+      <article class="expect-item">
+        <h3>Honesty</h3>
+
+        <p>
+          Not every project has one perfect answer.
+          Recommendations should be practical, straightforward, and made with
+          your goals in mind.
+        </p>
+      </article>
+
+      <article class="expect-item">
+        <h3>Confidence</h3>
+
+        <p>
+          The goal is simple:
+          leave you feeling just as confident in the process as you are in the
+          finished work.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+   <!-- =====================================================
+     PROCESS
+     ===================================================== -->
+<section class="section" id="process">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Process</p>
+
+      <h2>Knowing what comes next makes every project easier.</h2>
+
+      <p>
+        Every home is different, but the process should always feel clear,
+        straightforward, and easy to understand.
+      </p>
+    </div>
+
+    <div class="process-list">
+
+      <article class="process-step">
+        <span class="step-number">01</span>
+
+        <div>
+          <h3>Start with a Conversation</h3>
+
+          <p>
+            Every project begins with the same question:
+            What would you like your home to do better?
+          </p>
+        </div>
+      </article>
+
+      <article class="process-step">
+        <span class="step-number">02</span>
+
+        <div>
+          <h3>Look at the Space Together</h3>
+
+          <p>
+            A free estimate is an opportunity to walk through the space,
+            explore ideas, answer questions, and determine the best direction.
+          </p>
+        </div>
+      </article>
+
+      <article class="process-step">
+        <span class="step-number">03</span>
+
+        <div>
+          <h3>Build a Clear Plan</h3>
+
+          <p>
+            Before work begins, you'll know what is included,
+            what to expect, and how the project will move forward.
+          </p>
+        </div>
+      </article>
+
+      <article class="process-step">
+        <span class="step-number">04</span>
+
+        <div>
+          <h3>Enjoy the Finished Space</h3>
+
+          <p>
+            The goal isn't simply to complete a project.
+            It's to leave you with a home that works better than it did before.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- =====================================================
+     LET'S TALK
+     ===================================================== -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+
+    <div class="contact-panel">
+
+      <p class="eyebrow">Let's Talk</p>
+
+      <h2>Every project starts with a conversation.</h2>
+
+      <p>
+        You don't need a complete plan before reaching out.
+      </p>
+
+      <p>
+        Start with the room.
+      </p>
+
+      <p>
+        The idea you've been thinking about.
+      </p>
+
+      <p>
+        The solution can come next.
+      </p>
+
+      <div class="contact-actions">
+
+        <a class="button button-accent" href="tel:+14795023395">
+          Call or Text (479) 502-3395
+        </a>
+
+        <a
+          href="https://facebook.com/ozrkwoodforge"
+          target="_blank"
+          rel="noopener noreferrer">
+          Facebook
+        </a>
+
+        <a
+          href="https://instagram.com/ozrkwoodforge"
+          target="_blank"
+          rel="noopener noreferrer">
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">OZRK WoodForge</p>
+        <p>Custom Woodworking • Home Improvement</p>
+      </div>
+
+      <div>
+        <p>Serving Northwest Arkansas</p>
+        <p>Owned and operated by Andrew Miner</p>
+      </div>
+
+      <p>© 2026 OZRK WoodForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

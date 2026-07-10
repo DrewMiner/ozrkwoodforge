@@ -1,0 +1,453 @@
+/* TABLE OF CONTENTS            */
+/* 1. Global Styles & Variables */
+/* 2. Typography                */
+/* 3. Links                     */
+/* 4. Header & Navigation       */
+/* 5. Buttons                   */
+/* 6. Sections & Content        */
+/* 7. Popup                     */
+/* 8. blog post                 */
+/* 9. Footer                    */
+/* 10. Responsive Styles        */
+
+
+/* =================================================== */
+/* ========== 1. Global Styles & Variables ========== */
+/* =================================================== */
+
+:root {
+    --warm-brown: #4A3D36;
+    --midnight-blue: #2c3e50;
+    --rustic-orange: #B55A30;
+    --soft-neutral: #E3D5C1;
+    --aged-bronze: #705A46;
+    --matte-black: #1C1C1C;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%), 
+                url('/assets/images/noise-texture.png');
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: repeat;
+    filter: contrast(1.2) brightness(0.98);
+    
+}
+
+body, main {
+    overflow: visible;
+}
+
+/* =================================================== */
+/* ========== 2. Typography ========== */
+/* =================================================== */
+
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+    color: var(--matte-black);
+}
+
+p {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background: var(--aged-bronze);
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* =================================================== */
+/* ========== 3. Links ========== */
+/* =================================================== */
+
+a {
+    color: var(--midnight-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--rustic-orange);
+}
+
+/* =================================================== */
+/* ========== 4. Header & Navigation ========== */
+/* =================================================== */
+
+header {
+    position: relative;
+    margin-top: 60px;
+    padding-top: 60px;
+    background: url('/assets/images/banner-image.jpg') center/cover no-repeat;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1 !important;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1 !important;
+}
+
+header h1 {
+    color: var(--soft-neutral);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.blog-post-header {
+    color: var(--soft-neutral);
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation Bar */
+nav {
+    position: sticky;  /* ✅ Keeps navbar at the top of the viewport at all times */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--matte-black);
+    padding: 10px 0;
+    z-index: 1000;  /* ✅ Ensures navbar stays above all other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    font-family: 'Roboto Slab', sans-serif;
+    color: var(--soft-neutral);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--rustic-orange);
+}
+
+.sticky-nav {
+    position: sticky;  /* ✅ Makes it stick at the top */
+    top: 0;            /* ✅ Ensures it stays at the very top */
+    width: 100%;
+    background: var(--matte-black);
+    z-index: 1000;
+}
+
+/* =================================================== */
+/* ========== 5. Buttons ========== */
+/* =================================================== */
+
+button, .btn {
+    background: var(--midnight-blue);
+    color: var(--soft-neutral);
+    border: 1px solid var(--aged-bronze);
+    padding: 12px 20px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--rustic-orange);
+    color: var(--midnight-blue);
+    transform: scale(1.05);
+}
+
+/* =================================================== */
+/* ========== 6. Sections & Content ========== */
+/* =================================================== */
+
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    text-align: center;
+    background: rgba(139, 90, 43, 0.8);
+    color: #2F2520;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    width: 800px;
+    margin: 40px auto;
+}
+
+.hero-slideshow {
+    position: relative;
+    max-width: 500px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: none;  /* ✅ Hides all slides except the active one */
+    z-index: 0;     /* ✅ Ensures slides layer correctly */
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    display: block;  /* ✅ Makes the active slide visible */
+    opacity: 1;
+    z-index: 1;      /* ✅ Ensures active slide is on top */
+}
+
+/* ✅ Make sure the first slide is visible when the page loads */
+.slide:first-child {
+    opacity: 1;
+    position: relative;
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--soft-neutral);
+    padding: 10px 15px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.portfolio-container img {
+    width: 100%;          /* ✅ Makes the image responsive */
+    max-width: 400px;     /* ✅ Ensures the image never exceeds this width */
+    height: auto;         /* ✅ Maintains aspect ratio */
+    display: block;       /* ✅ Prevents extra space under the image */
+    margin: 0 auto;       /* ✅ Centers the image */
+    border-radius: 8px;   /* ✅ Optional: Adds rounded corners */
+}
+
+.cta-section {
+    text-align: center;
+}
+
+/* =================================================== */
+/* ========== 7. Popup ========== */
+/* =================================================== */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    z-index: 2000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-popup:hover {
+    color: #000;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column; /* ✅ Stacks elements vertically */
+    gap: 10px; /* ✅ Adds space between fields */
+}
+
+.contact-form label, 
+.contact-form input, 
+.contact-form textarea, 
+.contact-form button {
+    width: 100%; /* ✅ Ensures all elements stretch full width */
+    max-width: 500px; /* ✅ Keeps form from being too wide */
+}
+
+.contact-form textarea {
+    resize: vertical; /* ✅ Allows resizing up/down but not sideways */
+}
+
+
+/* =================================================== */
+/* ========== 8. blog post ========== */
+/* =================================================== */
+
+.latest-blog img {
+    width: 100%;          /* ✅ Makes the image responsive */
+    max-width: 400px;     /* ✅ Ensures the image never exceeds this width */
+    height: auto;         /* ✅ Maintains aspect ratio */
+    display: block;       /* ✅ Prevents extra space under the image */
+    margin: 0 auto;       /* ✅ Centers the image */
+    border-radius: 8px;   /* ✅ Optional: Adds rounded corners */
+   }
+
+   .blog-image, #post-image {
+    width: 40%;  /* ✅ Adjust as needed */
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    float: left;  /* ✅ Wraps text around the image */
+    margin: 0 20px 10px 0;  /* ✅ Adds spacing between image and text */
+}
+
+#post-content {
+    text-align: left;  /* ✅ Ensures text aligns properly next to image */
+}
+
+
+.blog-header {
+    margin-bottom: 20px;  /* ✅ Reduce space below the header */
+    text-align: center;
+    height: 50px;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* ✅ Reduces space between blog posts */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#blog-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* ✅ Controls spacing between blog posts */
+    padding: 20px;  /* ✅ Reduces padding */
+}
+
+
+/* =================================================== */
+/* ========== 9. Footer ========== */
+/* =================================================== */
+
+footer {
+    background: var(--matte-black);
+    color: var(--soft-neutral);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer nav ul li a {
+    color: var(--soft-neutral);
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: var(--rustic-orange);
+}
+
+/* =================================================== */
+/* ========== 10. Responsive Styles ========== */
+/* =================================================== */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+    }
+
+    .cta-section {
+        padding: 15px;
+    }
+}
